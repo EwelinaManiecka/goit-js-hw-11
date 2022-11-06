@@ -39,7 +39,7 @@ async function seachInformation(event) {
         }
     } catch (error) {
         console.log(error.message);
-    }
+    };
 };
 
 async function onButtonClick() {
@@ -49,7 +49,7 @@ async function onButtonClick() {
     if (searchQuery.page > response.totalHits / searchQuery.per_page) {
         buttonElement.classList.add("visually-hidden");
         Notiflix.Notify.failure("We're sorry, but you've reached the end of search results");
-    }
+    };
     renderingMarkup(response.hits);
 
     const { height: cardHeight} = document
@@ -62,7 +62,8 @@ async function onButtonClick() {
     });
 };
 
+
 function renderingMarkup(array) {
     galleryElement.insertAdjacentHTML("beforeend", createGalleryMarkup(array));
     lightbox.refresh();
-}
+};
